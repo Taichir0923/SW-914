@@ -1,0 +1,136 @@
+/* Position, Pseudo elements and classes, media query */
+/* 
+    position: absolute, relative, fixed
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* h1 {
+    margin: 2rem;
+    position: relative;
+    padding: 1rem 1.5rem;
+    border: 2px solid tomato;
+    color: tomato;
+    border-radius: 10px;
+    width: max-content;
+    overflow: hidden;
+} */
+
+/* h1::before {} */
+
+/* media query */
+/* 1. Desktop first */
+
+/* 2. Mobile first */
+
+
+/* Break points */
+/* (xs - extra small) , xs < 576 */
+/* (sm - small) , 576 <= sm < 768 */
+/* (md - medium) , 768 <= md < 1024 */
+/* (lg - large) , 1024 <= lg < 1200 */
+/* (xl - extra large) , 1200 <= xl < 1400 */
+/* (xxl - extra extra large) , 1400 <= xxl */
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: orangered;
+    color: white;
+}
+
+.header .logo {
+    padding-left: 1.5rem;
+}
+
+.header .menu .menu__desktop {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.header .menu .menu__desktop .listItems {
+    padding: 1rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.header .menu .menu__desktop .listItems:hover {
+    background-color: #fff;
+    color: orangered;
+}
+
+.header .menu .menu__mobile {
+    display: none;
+}
+
+.main {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.main .container .boxContainer {
+    width: 100%;
+}
+
+.main .container .boxContainer .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main .container .boxContainer .row .box {
+    width: 32%;
+    height: 250px;
+    border: 3px solid orangered;
+    background-color: rgb(255, 69, 0, .5);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+@media(max-width: 768px){
+    .header .menu .menu__desktop {
+        display: none;
+    }
+
+    .header .menu .menu__mobile {
+        display: block;
+        padding: 1rem;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .main .container .boxContainer .row {
+        flex-direction: column;
+    }
+
+    .main .container .boxContainer .row .box {
+        width: 90%;
+    }
+}
+
+
+/* Mobile First */
+
+
+.footer {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: .75rem 0;
+    background-color: orangered;
+}
