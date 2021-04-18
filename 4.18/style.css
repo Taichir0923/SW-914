@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Playfair+Display+SC:ital@0;1&family=Sacramento&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --playfair: 'Playfair Display SC', serif;
+    --alice: 'Alice', serif;
+    --sacramento: 'Sacramento', serif;
+    --hover: #c7d93b;
+    --titleColor: #1d1a19;
+    --titleBorder: 1px solid #49423b;
+    --largeBorder: 1px solid #fff;
+    --logoColor: #444;
+    --sharBG: #dba539;
+    --footer: #805f1e;
+}
+
+.header {
+    width: 100%;
+}
+
+.header__mobile {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 0;
+}
+
+.header__mobile .logo {
+    display: flex;
+    align-items: center;
+    font-family: var(--playfair);
+    font-size: 11.7px;
+    letter-spacing: .5em;
+}
+
+.shopName {
+    font-family: var(--playfair);
+    font-size: 11.7px;
+    letter-spacing: .5em;
+}
+
+.header__mobile .logo .logo__mobile {
+    width: 50px;
+    margin: 0 9px;
+}
+
+.header__mobile .icon {
+    margin-right: 1rem;
+}
+
+.header__hero {
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://cdn.shopify.com/s/files/1/0261/4687/t/7/assets/img_homepage_slider1.jpg?v=839847293968337857);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__hero .heroCap {
+    text-align: center;
+    color: #fff;
+}
+
+.header__hero .heroCap .heroTitle {
+    font-family: var(--playfair);
+    font-size: 36px;
+    font-weight: 300;
+    padding: 0 36px 27.8px 36px;
+    font-style: italic;
+    border-bottom: var(--largeBorder);
+    letter-spacing: 0.05em;
+    line-height: 1;
+}
+
+.header__hero .heroCap .hero_text {
+    font-size: 54px;
+    font-family: var(--sacramento);
+    transition: .3s;
+}
+
+.header__hero .heroCap .hero_text:hover {
+    color: var(--hover);
+    cursor: pointer;
+}
+
+.header__desktop {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    color: #fff;
+    display: none;
+    margin-top: 1rem;
+}
+
+.header__desktop .desktop__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.header__desktop .desktop__menu .menu__items {
+    padding: 0 32px 12px 32px;
+    font-family: var(--alice);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: .3s;
+    letter-spacing: .1em;
+}
+
+.header__desktop .desktop__menu .menu__items:hover {
+    color: var(--hover);
+    cursor: pointer;
+}
+
+.header__desktop .desktop__menu .desktop__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__desktop .desktop__menu .desktop__logo img {
+    width: 100px;
+    margin: 0 3rem .6rem 3rem;
+}
+
+.header__desktop .desktop__menu .desktop__logo p {
+    transition: .3s;
+}
+
+.header__desktop .desktop__menu .desktop__logo p:hover {
+    color: var(--hover);
+    cursor: pointer;
+}
+
+
+@media(min-width: 640px) {
+    .header__hero .heroCap .heroTitle {
+        font-size: 81px;
+        padding: 0 81px 12px 81px;
+    }
+
+    .header__hero .heroCap .hero_text {
+        font-size: 72px;
+    }
+}
+
+@media(min-width: 1024px){
+
+    .header__mobile {
+        display: none;
+    }
+
+    .header__desktop {
+        display: block;
+    }
+
+    .header__hero .heroCap .heroTitle {
+        padding-bottom: 2rem;
+    }
+}
