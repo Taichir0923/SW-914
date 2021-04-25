@@ -1,0 +1,133 @@
+/* CSS gradient && Animation */
+
+/* Gradient: linear */
+/* Gradient: radial */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url(https://imgproxy.natucate.com/PAd5WVIh-tjEKQM4Z6tm6W1J4Yc2JIYWrKEroD1c7mM/rs:fill/g:ce/w:3840/h:2160/aHR0cHM6Ly93d3cubmF0dWNhdGUuY29tL21lZGlhL3BhZ2VzL3JlaXNlYXJ0ZW4vNmMwODZlYmEtNzk3Yi00ZDVjLTk2YTItODhhNGM4OWUyODdlLzM3NjYwMTQ2NjMtMTU2NzQzMzYxMi8xMl9kYW5pZWxfY2FuX2JjLTIwNy5qcGc);
+    background-size: 150%;
+    background-position: left top;
+    animation: shiljih 10s linear infinite alternate;
+}
+
+@keyframes shiljih {
+    from {
+        background-position-x: left;
+    }
+
+    to {
+        background-position-x: right;
+    }
+} */
+
+
+/* body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+} */
+
+/* .hero {
+    width: 150px;
+    height: 150px;
+    background-color: #44bd32;
+    transition: .3s;
+    animation: erguuleh 4s linear infinite;
+} */
+
+/* .hero:hover {
+    transform: rotate(360deg)
+} */
+
+/* .hero:hover {
+} */
+
+/* @keyframes erguuleh {
+    0% {
+        transform: rotate(0);
+        background-color: #44bd32
+    }
+
+    33% {
+        transform: rotate(120deg);
+        background-color: #0097e6;
+    }
+
+    66% {
+        transform: rotate(240deg);
+        background-color: #e84118
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background-color: #44bd32
+    }
+} */
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.hero .boxContainer {
+    width: 300px;
+    height: 450px;
+    perspective: 1000px;
+}
+
+.hero .boxContainer .box {
+    background-color: #ED4C67;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(60deg) translateY(100px);
+    transition: .4s;
+    animation: ergeh3D 1s linear 1;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .boxContainer .box .img {
+    width: 90%;
+}
+
+.hero .boxContainer .box .img img {
+    width: 100%;
+}
+
+.hero .boxContainer .box .caption {
+    width: 90%;
+    background-color: rgba(255, 255, 255, .2);
+    height: 200px;
+    padding: 1rem;
+}
+
+.hero .boxContainer .box:hover {
+    cursor: pointer;
+    transform: rotateX(0) translateZ(200px);
+}
+
+@keyframes ergeh3D {
+    from {
+        transform: translateY(-200px) rotateX(0) translateY(0);
+    }
+
+    to {
+        transform: translateY(0) rotateX(60deg) translateY(100px);
+    }
+}
