@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+    <!-- <style>
+        
+        .wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .box {
+            width: 100px;
+            height: 90vh;
+            border-radius: 20px;
+            transition: .4s;
+        }
+
+        .box--1 {
+            background-color: #ff7675;
+        }
+
+        .box--2 {
+            background-color: #00cec9;
+        }
+
+        .box--3 {
+            background-color: #a29bfe;
+        }
+
+        .box--4 {
+            background-color: #fdcb6e;
+        }
+
+        .active {
+            width: 60%;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style> -->
+</head>
+<body>
+    <div class="grid container mx-auto grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
+        <div style="background-image: url(https://images.squarespace-cdn.com/content/v1/53a60116e4b0488fb14d69d8/1597336605370-5BEYBPCYKAZEMWC4J7KQ/image-asset.jpeg?format=1000w);" class="h-64 box bg-center bg-cover bg-red-400 rounded-3xl"></div>
+
+        <div style="background-image: url(https://cdn.royalcanin-weshare-online.io/UCImMmgBaxEApS7LuQnZ/v2/eukanuba-market-image-puppy-beagle?w=5596&h=2317&rect=574,77,1850,1045&auto=compress,enhance);" class="h-64 box bg-center bg-cover bg-red-400 rounded-3xl"></div>
+
+        <div style="background-image: url(https://cdn.shopify.com/s/files/1/0272/4770/6214/articles/when-do-puppies-start-walking.jpg?v=1593020034);" class="h-64 box bg-center bg-cover bg-red-400 rounded-3xl"></div>
+
+        <div style="background-image: url(https://i.guim.co.uk/img/media/fe1e34da640c5c56ed16f76ce6f994fa9343d09d/0_174_3408_2046/master/3408.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=c4f4d4981ad8e828c7d2402a47ed4f4f);" class="h-64 box bg-center bg-cover bg-red-400 rounded-3xl"></div>
+        
+    </div>
+
+    <div class="fixed hidden modal w-full flex items-center justify-center bg-opacity-30 h-screen top-0 left-0 bg-black">
+        <div class="rounded-3xl w-3/5 flex bg-white flex-col justify-between overflow-hidden">
+            <div class="modal__header border-b border-gray-600 flex justify-between items-center" >
+                <h1 class="text-2xl pl-6 font-bold">Title</h1>
+                <button id="closeBtn" class="py-3 px-8">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal__body">
+                <img class="w-full" src="" alt="">
+            </div>
+            <div class="modal__footer"></div>
+        </div>
+    </div>
+   
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
