@@ -8,7 +8,11 @@ const passwordConfirm = document.querySelector('#passwordConfirm');
 
 const check = document.querySelectorAll('.check');
 
-const users = [];
+let users = [];
+
+if(localStorage['users']){
+    users = JSON.parse(localStorage['users']);
+}
 
 let validPassword = false;
 let validForm = false;
@@ -114,15 +118,27 @@ button.addEventListener('click', function(e){
             id: parseInt(Math.random().toString().split('.')[1])
         }
         users.push(user)
-        console.log(users);
+        // console.log(users);
+        localStorage.setItem('users', JSON.stringify(users));
+        resetForm();
     } else {
         alert('Алдаа гарлаа')
     }
 });
 
+function resetForm(){
+    fullname.value = '';
+    email.value = '',
+    avatar.value = '',
+    number.value = null,
+    password.value = '',
+    passwordConfirm.value = ''
+}
 
-let arr = [5,7,8,3,1,5,3,6,5];
 
-arr.forEach(function(ehnii, second){
-    console.log(ehnii , second);
-})
+// let arr = [5,7,8,3,1,5,3,6,5];
+
+// arr.forEach(function(ehnii, second){
+//     console.log(ehnii , second);
+// })
+// JSON - JavaScript Object Notation

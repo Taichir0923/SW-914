@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.7/tailwind.min.css"
+      integrity="sha512-y6ZMKFUQrn+UUEVoqYe8ApScqbjuhjqzTuwUMEGMDuhS2niI8KA3vhH2LenreqJXQS+iIXVTRL2iaNfJbDNA1Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen w-full flex justify-center items-center">
+        <form class="2xl:w-1/5 mx-auto w-4/5 md:w-2/5 bg-white p-8 rounded-xl shadow-xl flex flex-col">
+            <h1 class="font-bold mb-6 text-3xl">Login</h1>
+    
+            <label class="mb-2 font-bold" for="email">Email</label>
+            <input class="border border-gray-300 mb-4 focus:outline-none w-full py-2 px-4 rounded-xl" type="email" id="email" placeholder="Email">
+    
+            <label class="mb-2 font-bold" for="password">Password</label>
+            <input class="border border-gray-300 mb-4 focus:outline-none w-full py-2 px-4 rounded-xl" type="password" id="password" placeholder="Password">
+    
+            <div class="w-full flex justify-between mb-4">
+              <p class="font-bold text-green-400">
+                Нууц үг мартсан
+              </p>
+              <p class="font-bold text-green-400">
+                <a href="./index.html">Бүртгүүлэх</a>
+              </p>
+            </div>
+    
+            <input id="btn" class="bg-green-400 text-white py-2 px-4 rounded-xl mt-2" type="submit" value="Login">
+    
+          </form>
+    </div>
+
+    <script>
+        const btn = document.querySelector('#btn');
+        const email = document.querySelector('#email');
+        const password = document.querySelector('#password');
+
+        let users = [];
+        if(localStorage['users']){
+            users = JSON.parse(localStorage['users'])
+        }
+
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            let currentUser = users.find(function(el){
+                return el.email === email.value;
+            });
+            if(!currentUser){
+                swal({
+                    icon: 'error',
+                    title: 'Алдаа гарлаа',
+                    text: 'Хэрэглэгч олдсонгүй'
+                })
+                return;
+            } else {
+                if(currentUser.password === password.value){
+                    localStorage.setItem('loggedUser', JSON.stringify(currentUser));
+                    location.href = 'http://127.0.0.1:5500/userAc.html'
+                } else {
+                    swal({
+                        icon: 'error',
+                        title: 'Алдаа гарлаа',
+                        text: 'Имэйл эсвэл нууц үг буруу байна.'
+                    });
+                    return;
+                }
+            }
+        })
+
+        // find , callback function dotroo boolean utga butsaana
+    </script>
+</body>
+</html>
